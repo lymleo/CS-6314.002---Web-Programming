@@ -1,0 +1,17 @@
+<h1>Video List:</h1>
+<div class="row">
+	<div ng-repeat='video in videos' class="col-xs-6 col-md-3">
+<hr>
+    <img ng-src="/images/{{video.image}}.jpg" alt={{video.name}}>
+        <a href="/#/video/{{video._id}}">
+            {{video.title}}
+        </a>
+        <a href="/#/video/delete/{{video._id}}">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+    </li>
+		</div>
+	</div>
+</div>
+	<hr>
+	<a href="/#/add-video" style = "font-size:22pt; font-family:arial; text-align:center; font-weight:bold;">Add Video</a>

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+  h1 Sign Up
+    form(role='form', action="/register",method="post", style="max-width: 200px;")
+      .form-group
+          input.form-control(type='text', name="username", placeholder='Enter Username' )
+      .form-group
+        input.form-control(type='password', name="password", placeholder='Password')
+      button.btn.btn-default(type='submit' style = "font-size:16pt; font-family:arial; ") Submit
+      &nbsp;
+      a(href='/')
+        button.btn.btn-default(type="button" style = "font-size:16pt; font-family:arial;") Cancel

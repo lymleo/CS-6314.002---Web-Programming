@@ -1,0 +1,16 @@
+<section ng-show="modelName">
+	<h1>{{title}}</h1>
+	<form ng-submit="submit()">
+	<img ng-src="/images/{{video.image}}.jpg" alt={{video.name}}><br>
+    </div>
+		<div class="form-group">
+			<label>Title</label>
+			<input class="form-control" ng-model="video.title"></input>
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea class="form-control" ng-model="video.description"></textarea>
+		</div>
+		<button class="btn btn-primary">Submit</button>
+	</form>
+</section>

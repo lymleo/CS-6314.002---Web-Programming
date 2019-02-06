@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+    if (!user)
+      a(href='/login')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Login
+      a(href='no/register')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Register
+    if (user)
+      p You are currently logged in as #{user.username}
+      a(href='/logout')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Sign Out
+  div(ng-view)

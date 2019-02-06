@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .container
+
+  p(style = "font-size:22pt; font-family:arial; text-align:center; font-weight:bold;") Home Page<br>
+    if (!user)
+      a(href='/login')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Sign In
+      a(href='/register')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Sign Up
+    
+    if (user)
+     p(style = "font-size:22pt; font-family:arial; text-align:center; font-weight:bold;")  Welcome! -- #{user.username} -- <br>
+      a(href='/logout')
+        button.btn.btn-primary(type="button" style = "font-size:16pt; font-family:arial; background-color: darkblue;") Logout
+  div(ng-view)

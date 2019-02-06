@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 3</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        table {
+            font-weight: bold;
+            color: rgb(100,100,100);
+            font-size: 12pt;
+            margin-left: 10pt;
+        }
+        #check {
+        	margin-left: 10pt;
+        }
+        #p1 {
+            font-size: 20pt;
+            color: black;
+            text-align: center;
+            margin: 10pt;
+        }
+    </style>
+
+    <script>
+    function showBabynames() { 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() { 
+    	if (xmlhttp.readyState==4 && xmlhttp.status==200) { 
+    		document.getElementById("p1").innerHTML=xmlhttp.responseText; }
+    	}
+    var year = document.getElementById("year").value;
+    var gender = document.getElementById("gender").value;
+    var queryString = "?year=" + year;
+    queryString += "&gender=" + gender;
+
+    xmlhttp.open("GET","babynames.php" + queryString, true); 
+    xmlhttp.send(null); } 
+
+
+    </script>
+
+</head>
+
+
+<body>
+    <h1 style="text-align: center; font-size: 20pt">Assignment 3: Top-Five Baby Names</h1>
+
+    <form>
+    <table>
+		<tr>
+			<td><label for="birthyear">Birthyear:</label></td>
+			<td>
+			<select name="year" id="year">
+                <script>
+                var start = 2005;
+                var end = new Date().getFullYear()-2;
+                var options = "<option></option>";
+                for(var year = start ; year <=end; year++){
+                	options += "<option>"+ year +"</option>";
+                }
+                document.getElementById("year").innerHTML = options;
+                </script>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="gender">Gender:</label></td>
+			<td>
+			<select name="gender" id="gender">
+              <option></option>
+			  <option value="m">Male</option>
+			  <option value="f">Female</option>
+			</select>
+			</td>
+		</tr>
+	</table>
+	<input id = "check" type="button" value = "CHECK" onclick="showBabynames()">
+	</form>
+    
+
+    <div>
+    <p id="p1"></p>
+    </div>
+
+</body>
+
+
+</html>

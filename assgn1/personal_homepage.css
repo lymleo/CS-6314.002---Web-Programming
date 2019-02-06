@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0;
+	background: black;
+}
+
+header{
+	
+	background: #999;
+	color: black;
+}
+
+header h2{
+	margin: 10px 0 0 5px ;
+	font:20pt;
+	display: inline-block;
+	
+}
+
+header ul{
+	padding:0 0 0 15px;
+	display: inline-block;
+	margin: 0px 5px 10px 5px;
+
+}
+
+header li{
+	background:black;
+	display: inline-block;
+	list-style-type: none;
+	padding: 5px 15px;
+}
+
+header a{
+	color: white;
+} 
+ 
+.left_nav{
+	float: left;
+	list-style-type: none;
+	margin:0;
+}
+.left_nav li{
+	margin: 100px 0 20px 0;
+}
+.left_nav a{
+	color: white;
+}
+
+.right_nav{
+	float:right;
+	list-style-type: none;
+}
+.right_nav li{
+	margin: 50px 0 150px 0;
+}
+
+.article{
+	margin: 0 250px 0 250px;
+	background: white;
+	border-style: inset;
+}
+#me{
+	margin: 20px 20px;
+}
+.title{
+	margin: 10px 20px;
+	font-weight: bold; 
+	font-size: 22px;
+}
+
+.text{
+	margin:10px 20px;
+	font-size:20px;
+}
+.list{
+	margin:10px 20px;
+	font-size:19px;
+}
+
+footer{
+	background: grey;
+	text-align: center;
+}
+
+
